@@ -13,11 +13,19 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
 
   * Antes de analizar las tramas, mira las estadísticas generales que aparecen en el menú de Statistics. En el apartado de jerarquía de protocolos (Protocol Hierarchy) se puede ver el porcentaje del tráfico correspondiente al protocolo TCP y UDP.
     * ¿Cuál de los dos es mayor? ¿Tiene esto sentido si estamos hablando de una aplicación que transmite en tiempo real?
+      Es mayor el protocolo UDP (96.2%) que TCP (2.1%).
+      Tiene sentido debido a que en transmisiones en tiempo real se utiliza UDP ya que no envia asentimientos ni reenvia paquetes perdidos que no nos harian falta ya en tiempo real.
     * ¿Qué otros protocolos podemos ver en la jerarquía de protocolos? ¿Cuales crees que son señal y cuales ruido?
+      Protocolo Ethernet, IPv4, SIP, RTP, RTCP, DNS, HTTP, ICMP, ARP y H.261
+      Nos interesa será los protocolos SIP, RTP, H.261, lo demás podriamos considerarlo ruido
+
 
   * Observa por encima el flujo de tramas en el menú de Statistics en IO Graphs. La captura que estamos viendo incluye desde la inicialización (registro) de la aplicación hasta su finalización, con una llamada entremedias.
     * Filtra por sip para conocer cuándo se envían paquetes SIP. ¿En qué segundos tienen lugar esos envíos?
+      En el intervalo 7s-8s se han enviado 6 paquetes, en el 14s-15s, 3 paquetes, en el 16s-17s, paquetes, en el 38s-39s 4 paquetes, en el 39s-40s,4 paquetes y en el 55s-56s 4 paquetes
     * Y los paquetes con RTP, ¿cuándo se envían?
+      39 paquetes en el intervalo 17s-18s, 51 paquetes en el 18s-19s, 46 paquetes en el 19s-20s,  20 paquetes en el 20s-21s, 30 paquetes en el 21s-22s, 60 paquetes en el 23s-24s, 70 paquetes en el 24s-25s, 90 paquetes en el 25s-26s, 49 paquetes en el 27s-28s,
+      40 paquetes en el  28s-29s, 67 paquetes en el 29s-30s, 20 paquetes en el 30s-31s, 10 paquetes en el 31s-32s, 30 paquetes en el 33s-34s, 20 paquetes en el 34s-35s, 30 paquetes en el 34s-36s, 10 paquetes en el 37s-38s y 5 paquetes en el 38s-39s.
 
   [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
