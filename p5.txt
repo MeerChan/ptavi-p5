@@ -171,7 +171,7 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
     * ¿Cuántos flujos tenemos?
       Dos de audio
     * ¿Cuál es su periodicidad?
-      50 paquetes por segundo, 1 paquete cada 20 ms
+      120 paquetes por segundo, 1 paquete cada  8.3ms
     * ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
       Flujo enviado por 212.79.111.155 Max Delta: 27.249ms, Max Jitter: 1.735ms y Mean Jitter: 0.755ms
       Flujo enviado por 212.128.255.32 Max Delta: 40.887ms, Max Jitter: 12.665ms y Mean Jitter: 11.421ms
