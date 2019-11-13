@@ -109,7 +109,7 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
     * ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el valor de delta?
       Es la latencia, el tiempo que tarda en enviarse un paquete. En audio 1290.444 ms y video 1290.479
     * ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué quiere decir eso? ¿Crees que estamos ante una conversación de calidad?
-      Audio(G.711) max jitter: 119.635, mean jitter:42.5
+      Audio(G.711) max jitter: 119.635, mean jitter:42.5/blob/master/server.py
       Video(H.261) max jitter: 183.096, mean jitter:153.240
       El jitter es la variacion de la latencia.
       Diria que no ya que no se mandan periodicamente
@@ -142,7 +142,7 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
       En las tramas 924, 925, 927 y 933.
     * ¿Por qué crees que se envía varias veces?
       Porque como en UDP no se reenvian los paquetes, para asegurar enviamos varios
-  * Finalmente, se cierra la aplicación de VozIP.
+  *16. Finalmente, se cierra la aplicación de VozIP.
     * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
       Porque quiere borrarse del servidor entonces manda un register con expires 0
     * ¿En qué trama sucede esto?
@@ -162,14 +162,23 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
 
   * Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
     * ¿Se utilizan DNS y STUN? ¿Por qué?
+      Sólo se utiliza DNS para saber el nombre de la máquina, no se utiliza el
+      STUN porque ya estamos en una ip pública.
     * ¿Son diferentes el registro y la descripción de la sesión?
+      No, solo cambia el nombre
 
   * Identifica las diferencias existentes entre esta conversación y la conversación anterior:
     * ¿Cuántos flujos tenemos?
+      Dos de audio
     * ¿Cuál es su periodicidad?
+      50 paquetes por segundo, 1 paquete cada 20 ms
     * ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
+      Flujo enviado por 212.79.111.155 Max Delta: 27.249ms, Max Jitter: 1.735ms y Mean Jitter: 0.755ms
+      Flujo enviado por 212.128.255.32 Max Delta: 40.887ms, Max Jitter: 12.665ms y Mean Jitter: 11.421ms
     * ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
+      No, ya que cuando vamos a Telephony, VoipCalls y seleccionamos el flujo y le damos a Play stream nos dice que el codec no es compatible.
     * ¿Sabrías decir qué tipo de servicio ofrece sip:music@iptel.org?
+      Es un servicio que reproduce musica constantemente
 
   [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
